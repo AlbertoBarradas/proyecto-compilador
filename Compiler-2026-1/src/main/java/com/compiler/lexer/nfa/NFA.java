@@ -17,6 +17,10 @@ public class NFA {
      */
     public final State endState;
 
+    public State accept;
+
+    public Object start;
+
     /**
      * Constructs a new NFA with the given start and end states.
      *

@@ -24,6 +24,10 @@ public class State {
      */
     public boolean isFinal;
 
+    public char symbol;
+
+    public State to;
+
     /**
      * Constructs a new state with a unique identifier and no transitions.
      * The state is not final by default.

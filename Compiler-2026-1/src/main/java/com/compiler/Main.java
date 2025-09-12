@@ -7,7 +7,7 @@ import com.compiler.lexer.DfaMinimizer;
 import com.compiler.lexer.DfaSimulator;
 import com.compiler.lexer.NfaToDfaConverter;
 import com.compiler.lexer.dfa.DFA;
-import com.compiler.lexer.dfa.DFAState;
+import com.compiler.lexer.dfa.DfaState;
 import com.compiler.lexer.nfa.NFA;
 import com.compiler.lexer.regex.RegexParser;
 /**
@@ -74,7 +74,7 @@ public class Main {
      */
     public static void visualizeDfa(DFA dfa) {
         System.out.println("Start State: D" + dfa.startState.id);
-        for (DFAState state : dfa.allStates) {
+        for (DfaState state : dfa.allStates) {
             StringBuilder sb = new StringBuilder();
             sb.append("State D").append(state.id);
             if (state.isFinal) {

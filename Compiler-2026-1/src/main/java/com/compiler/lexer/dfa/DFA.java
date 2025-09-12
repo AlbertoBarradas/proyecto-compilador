@@ -1,5 +1,6 @@
 package com.compiler.lexer.dfa;
 
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -18,7 +19,6 @@ public class DFA {
      * A list of all states in the DFA.
      */
     public final List<DfaState> allStates;
-    // Optionally, a Set<Character> for the alphabet could be added.
 
     /**
      * Constructs a new DFA.
@@ -26,7 +26,35 @@ public class DFA {
      * @param allStates  A list of all states in the DFA.
      */
     public DFA(DfaState startState, List<DfaState> allStates) {
-        //TODO: Implement DFA construction logic.
-        throw new UnsupportedOperationException("DFA construction is not supported yet.");
+        if (startState == null) {
+            throw new IllegalArgumentException("DFA must have a start state.");
+        }
+        if (allStates == null || allStates.isEmpty()) {
+            throw new IllegalArgumentException("DFA must have at least one state.");
+        }
+
+        this.startState = startState;
+        this.allStates = Collections.unmodifiableList(allStates);
+    }
+
+    /**
+     * Returns the starting state of the DFA.
+     * @return the DFA's start state.
+     */
+    public DfaState getStartState() {
+        return startState;
+    }
+
+    /**
+     * Returns all states of the DFA.
+     * @return list of DFA states.
+     */
+    public List<DfaState> getAllStates() {
+        return allStates;
+    }
+
+    @Override
+    public String toString() {
+        return "DFA{startState=" + startState + ", totalStates=" + allStates.size() + "}";
     }
 }

@@ -21,7 +21,7 @@ import java.util.Map;
 import java.util.Set;
 
 import com.compiler.lexer.dfa.DFA;
-import com.compiler.lexer.dfa.DFAState;
+import com.compiler.lexer.dfa.DfaState;
 
 
 /**
@@ -67,7 +67,7 @@ public class DfaMinimizer {
      * @param table Table indicating which pairs are distinguishable.
      * @return List of partitions, each containing equivalent states.
      */
-    private static List<Set<DFAState>> createPartitions(List<DFAState> allStates, Map<Pair, Boolean> table) {
+    private static List<Set<DfaState>> createPartitions(List<DfaState> allStates, Map<Pair, Boolean> table) {
     // TODO: Implement createPartitions
     /*
      Pseudocode:
@@ -87,7 +87,7 @@ public class DfaMinimizer {
      * @param state State to find.
      * @return Root parent of the state.
      */
-    private static DFAState find(Map<DFAState, DFAState> parent, DFAState state) {
+    private static DfaState find(Map<DfaState, DfaState> parent, DfaState state) {
     // TODO: Implement find
     /*
      Pseudocode:d
@@ -105,7 +105,7 @@ public class DfaMinimizer {
      * @param s1 First state.
      * @param s2 Second state.
      */
-    private static void union(Map<DFAState, DFAState> parent, DFAState s1, DFAState s2) {
+    private static void union(Map<DfaState, DfaState> parent, DfaState s1, DfaState s2) {
     // TODO: Implement union
     /*
      Pseudocode:
@@ -120,15 +120,15 @@ public class DfaMinimizer {
      * Used for table indexing and comparison.
      */
     private static class Pair {
-        final DFAState s1;
-        final DFAState s2;
+        final DfaState s1;
+        final DfaState s2;
 
         /**
          * Constructs a pair in canonical order (lowest id first).
          * @param s1 First state.
          * @param s2 Second state.
          */
-        public Pair(DFAState s1, DFAState s2) {
+        public Pair(DfaState s1, DfaState s2) {
             // TODO: Implement Pair constructor
             /*
              Pseudocode:
