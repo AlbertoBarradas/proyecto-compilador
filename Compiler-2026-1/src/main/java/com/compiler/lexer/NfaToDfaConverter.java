@@ -24,7 +24,7 @@ public class NfaToDfaConverter {
      * @param alphabet The input alphabet (set of characters)
      * @return The resulting DFA
      */
-    public static DFA convertNfaToDfa(NFA nfa, Set<Character> alphabet) {
+    /* public static DFA convertNfaToDfa(NFA nfa, Set<Character> alphabet) {
         // Step 1: initial DFA state = epsilon-closure of NFA start
         Set<State> startClosure = epsilonClosure(Set.of(nfa.start));
         DfaState startState = new DfaState(startClosure);
@@ -64,12 +64,12 @@ public class NfaToDfaConverter {
         }
 
         return new DFA(startState, dfaStates);
-    }
+    } */
 
     /**
      * Computes the epsilon-closure of a set of NFA states.
      */
-    private static Set<State> epsilonClosure(Set<Object> moveSet) {
+/*     private static Set<State> epsilonClosure(Set<Object> moveSet) {
         Stack<State> stack = new Stack<>();
         Collection<? extends State> set;
 		stack.addAll(set);
@@ -82,12 +82,12 @@ public class NfaToDfaConverter {
                 }
             }
         }
-    }
+    } */
 
     /**
      * Returns the set of states reachable from a set of NFA states by a given symbol.
      */
-    private static Set<Object> move(Set<State> states, char symbol) {
+/*     private static Set<Object> move(Set<State> states, char symbol) {
         Set<State> result = new HashSet<>();
         for (State s : states) {
             for (var transition : s.getTransitions(symbol)) {
@@ -97,7 +97,7 @@ public class NfaToDfaConverter {
             }
         }
 
-    }
+    } */
 
     /**
      * Finds an existing DFA state representing a given set of NFA states.

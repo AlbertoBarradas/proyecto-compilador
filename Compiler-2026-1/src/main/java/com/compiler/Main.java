@@ -1,4 +1,4 @@
-package com.compiler;
+/* package com.compiler;
 
 import java.util.Map;
 import java.util.Set;
@@ -9,7 +9,7 @@ import com.compiler.lexer.NfaToDfaConverter;
 import com.compiler.lexer.dfa.DFA;
 import com.compiler.lexer.dfa.DfaState;
 import com.compiler.lexer.nfa.NFA;
-import com.compiler.lexer.regex.RegexParser;
+import com.compiler.lexer.regex.RegexParser; */
 /**
  * Main class for demonstrating regex to NFA, DFA conversion, minimization, and simulation.
  * This class builds an automaton from a regular expression, minimizes it, and tests several input strings.
@@ -17,11 +17,11 @@ import com.compiler.lexer.regex.RegexParser;
 /**
  * Main class for demonstrating regex to NFA, DFA conversion, minimization, and simulation.
  */
-public class Main {
+/* public class Main { */
     /**
      * Default constructor for Main.
      */
-    public Main() {}
+    /* public Main() {} */
 
     /**
      * Entry point for the automaton demo.
@@ -33,7 +33,7 @@ public class Main {
      *
      * @param args Command-line arguments (not used)
      */
-    public static void main(String[] args) {
+    /* public static void main(String[] args) {
         // --- CONFIGURATION ---
         String regex = "a(b|c)*";
         Set<Character> alphabet = Set.of('a', 'b', 'c');
@@ -44,27 +44,27 @@ public class Main {
         // --- STEP 1: Regex -> NFA ---
         RegexParser parser = new RegexParser();
         NFA nfa = parser.parse(regex);
-        nfa.endState.isFinal = true;
+        nfa.endState.isFinal = true; */
 
         // --- STEP 2: NFA -> DFA ---
-        DFA dfa = NfaToDfaConverter.convertNfaToDfa(nfa);
+        /* DFA dfa = NfaToDfaConverter.convertNfaToDfa(nfa);
         System.out.println("--- Original DFA ---");
-        visualizeDfa(dfa);
+        visualizeDfa(dfa); */
 
         // --- STEP 3: DFA Minimization ---
-        DFA minimizedDfa = DfaMinimizer.minimizeDfa(dfa, alphabet);
+        /* DFA minimizedDfa = DfaMinimizer.minimizeDfa(dfa, alphabet);
         System.out.println("--- Minimized DFA ---");
-        visualizeDfa(minimizedDfa);
+        visualizeDfa(minimizedDfa); */
 
         // --- STEP 4: DFA Simulation ---
-        DfaSimulator dfaSimulator = new DfaSimulator();
-        System.out.println("--- Testing Simulator with Minimized DFA ---");
+        /* DfaSimulator dfaSimulator = new DfaSimulator();
+        System.out.println("--- Testing Simulator with Minimized DFA ---"); */
 
-        for (String s : testStrings) {
+        /* for (String s : testStrings) {
             boolean accepted = dfaSimulator.simulate(minimizedDfa, s);
             System.out.println("String '" + s + "': " + (accepted ? "Accepted" : "Rejected"));
         }
-    }
+    } */
 
     /**
      * Prints a textual representation of the DFA structure for debugging purposes.
@@ -72,7 +72,7 @@ public class Main {
      *
      * @param dfa The DFA to visualize.
      */
-    public static void visualizeDfa(DFA dfa) {
+   /*  public static void visualizeDfa(DFA dfa) {
         System.out.println("Start State: D" + dfa.startState.id);
         for (DfaState state : dfa.allStates) {
             StringBuilder sb = new StringBuilder();
@@ -90,5 +90,5 @@ public class Main {
             System.out.println(sb.toString());
         }
         System.out.println("------------------------\n");
-    }
-}
+    } */
+//}

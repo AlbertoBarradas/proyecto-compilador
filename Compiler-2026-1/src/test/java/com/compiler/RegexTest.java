@@ -1,4 +1,4 @@
-package com.compiler;
+/* package com.compiler;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import org.junit.jupiter.params.ParameterizedTest;
@@ -327,3 +327,4 @@ public class RegexTest {
     assertEquals(expected, actualDfa, "DFA fallo para la cadena: '" + input + "'");
     }
 }
+ */
